@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Villa Puncak - Terverifikasi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased relative">
+    
+    <!-- Navbar -->
+    <header class="bg-white shadow-sm sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <h1 class="font-bold text-xl text-blue-900 tracking-tight">VillaPuncak<span class="text-blue-500">.co</span></h1>
+            <span class="text-sm font-medium bg-green-100 text-green-700 px-3 py-1 rounded-full">100% Terverifikasi</span>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">Sewa Villa Rombongan Tanpa Calo.</h2>
+        <p class="text-gray-600 text-lg md:text-xl max-w-2xl">Harga transparan, foto asli, dan jaminan keamanan transaksi untuk acara makrab, gathering, atau keluarga besar Anda.</p>
+    </section>
+
+    <!-- Katalog Villa Grid -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <div id="villa-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            <!-- Kartu Villa akan di-generate oleh JavaScript di sini -->
+        </div>
+    </main>
+
+    <!-- Modal Detail Villa (Hidden by default) -->
+    <div id="villa-modal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm transition-opacity">
+        <!-- Container Modal -->
+        <div class="fixed bottom-0 left-0 right-0 md:inset-0 md:flex md:items-center md:justify-center p-0 md:p-4">
+            <!-- Modal Content -->
+            <div class="bg-white w-full md:w-auto md:max-w-3xl md:rounded-2xl rounded-t-2xl shadow-2xl modal-enter overflow-hidden flex flex-col max-h-[90vh]">
+                
+                <!-- Header Modal -->
+                <div class="relative">
+                    <img id="modal-img" src="" alt="Villa Image" class="w-full h-56 md:h-80 object-cover">
+                    <button onclick="closeModal()" class="absolute top-4 right-4 bg-white/80 backdrop-blur text-gray-900 p-2 rounded-full shadow-lg hover:bg-white transition">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                    <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-lg shadow">
+                        <span id="modal-capacity" class="font-semibold text-gray-800 text-sm"></span>
+                    </div>
+                </div>
+
+                <!-- Body Modal -->
+                <div class="p-5 md:p-8 overflow-y-auto no-scrollbar">
+                    <h3 id="modal-title" class="text-2xl font-bold text-gray-900 mb-2"></h3>
+                    <p id="modal-desc" class="text-gray-600 mb-6 leading-relaxed"></p>
+                    
+                    <h4 class="font-bold text-gray-900 mb-3">Fasilitas Utama:</h4>
+                    <ul id="modal-facilities" class="grid grid-cols-2 gap-2 text-gray-700 text-sm mb-6"></ul>
+                    
+                    <div class="bg-blue-50 rounded-xl p-4 border border-blue-100 flex justify-between items-center">
+                        <div>
+                            <p class="text-sm text-blue-800 mb-1">Mulai dari</p>
+                            <p id="modal-price" class="text-xl md:text-2xl font-bold text-blue-900"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer Modal (Sticky Button) -->
+                <div class="p-4 md:p-5 border-t bg-gray-50">
+                    <button id="modal-book-btn" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-xl transition duration-200 shadow-lg shadow-green-500/30 text-lg flex justify-center items-center gap-2">
+                        <span>Cek Ketersediaan (WhatsApp)</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
